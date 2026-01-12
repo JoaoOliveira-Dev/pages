@@ -10,7 +10,7 @@ interface BadgeProps {
 }
 
 interface TerminalBlockProps {
-  command: string;
+  command?: string;
   output?: string; // Opcional
   title?: string;  // Opcional
 }
@@ -49,10 +49,15 @@ export const Badge: React.FC<BadgeProps> = ({ type, children }) => {
   );
 };
 
-export const TerminalBlock: React.FC<TerminalBlockProps> = ({ command, output, title = "root@kali:~" }) => {
+export const TerminalBlock: React.FC<TerminalBlockProps> = ({
+  command,
+  output,
+  title = "root@kali:~",
+}) => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
+    if (!command) return;
     navigator.clipboard.writeText(command);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -65,7 +70,8 @@ export const TerminalBlock: React.FC<TerminalBlockProps> = ({ command, output, t
           <Terminal size={14} className="text-green-400" />
           <span className="text-gray-400 text-xs">{title}</span>
         </div>
-        <button 
+
+        <button
           onClick={handleCopy}
           className="text-gray-400 hover:text-white transition-colors"
           title="Copiar comando"
@@ -73,21 +79,25 @@ export const TerminalBlock: React.FC<TerminalBlockProps> = ({ command, output, t
           {copied ? <Check size={14} /> : <Copy size={14} />}
         </button>
       </div>
-      
+
       <div className="p-4 overflow-x-auto">
-        <div className="flex gap-2 mb-2">
+        {/* Command */}
+        <div className="flex gap-2 mb-3">
           <span className="text-green-500 font-bold">└─#</span>
           <span className="text-gray-100">{command}</span>
         </div>
+
+        {/* Output */}
         {output && (
-          <div className="text-gray-400 whitespace-pre-wrap mt-2 pl-4 border-l-2 border-gray-700">
-            {output}
-          </div>
+          <pre className="text-gray-400 mt-2 pl-4 border-l-2 border-gray-700 overflow-x-auto">
+{output}
+          </pre>
         )}
       </div>
     </div>
   );
 };
+
 
 export const Callout: React.FC<CalloutProps> = ({ type = "info", title, children }) => {
   const styles = {
@@ -116,14 +126,14 @@ export const Callout: React.FC<CalloutProps> = ({ type = "info", title, children
 export const WriteUpLayout: React.FC<WriteUpLayoutProps> = ({ title, date, difficulty, platform, children }) => {
   return (
     <div className="min-h-screen bg-[#0d1117] text-gray-300 font-sans selection:bg-green-900 selection:text-white">
-      <div className="max-w-3xl mx-auto px-6 py-12">
+      <div className="max-w-5xl mx-auto px-6 py-12">
         <header className="mb-12 border-b border-gray-800 pb-8">
           <div className="flex gap-2 mb-4">
             <Badge type="platform">{platform}</Badge>
             <Badge type={difficulty.toLowerCase()}>{difficulty}</Badge>
           </div>
           <h1 className="text-4xl font-bold text-white mb-2">{title}</h1>
-          <p className="text-gray-500 text-sm">Publicado em: {date}</p>
+          <p className="text-gray-500 text-sm">Published in: {date}</p>
         </header>
         <article className="prose prose-invert max-w-none">
           {children}
@@ -132,3 +142,34 @@ export const WriteUpLayout: React.FC<WriteUpLayoutProps> = ({ title, date, diffi
     </div>
   );
 };
+
+export const LinkButton: React.FC<{ to: string; children: ReactNode }> = ({ to, children }) => {
+  return (
+    <a
+      href={to}
+      className="inline-block bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded transition-colors"
+    >
+      {children}
+    </a>
+  );
+}
+
+export const ExternalLink: React.FC<{ to: string; children: ReactNode }> = ({ to, children }) => {
+  return (
+    <a
+      href={to}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-green-400 hover:text-green-300"
+    >
+      {children}
+    </a>
+  );
+}
+
+export const Title: React.FC<{ children: ReactNode }> = ({ children }) => {
+  return (
+    <h2 className="text-2xl font-bold text-white mt-8 mb-4">{children}</h2>
+  );
+}
+

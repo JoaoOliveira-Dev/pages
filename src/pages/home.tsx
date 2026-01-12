@@ -11,27 +11,27 @@ const Home = () => {
             <Terminal className="text-green-500" size={40} />
             CTF Write-ups
           </h1>
-          <p className="text-gray-500">Documentação de invasões e resoluções de CTF.</p>
+          <p className="text-gray-500">Documentation of invasions and CTF resolutions.</p>
         </header>
 
         <div className="grid gap-4">
           {/* --- ITEM 1: Card do Write-up --- */}
-          <Link to="/writeup/hashcat-fix" className="block group">
+          <Link to="/writeup/crack-the-hash" className="block group">
             <div className="bg-[#161b22] border border-gray-700 rounded-lg p-6 hover:border-green-500 transition-colors">
               <div className="flex justify-between items-start mb-2">
                 <h2 className="text-xl font-bold text-white group-hover:text-green-400 transition-colors">
-                  Quebrando Hashes Bcrypt - Linux PrivEsc
+                  Crack the hash
                 </h2>
                 <div className="flex gap-2">
                   <Badge type="platform">TryHackMe</Badge>
-                  <Badge type="medium">Medium</Badge>
+                  <Badge type="medium">Easy</Badge>
                 </div>
               </div>
               <p className="text-gray-400 text-sm mb-4">
-                Resolvendo problemas de travamento do Hashcat e escalando privilégios via quebra de senha.
+                Resolving Hashcat crash issues and escalating privileges via password cracking.
               </p>
               <div className="text-xs text-gray-500 font-mono">
-                19 Dez 2025
+                19 Dec 2025
               </div>
             </div>
           </Link>

@@ -10,7 +10,7 @@ function App() {
         <Route path="/" element={<Home />} />
         
         {/* Rotas dos Write-ups */}
-        <Route path="/writeup/hashcat-fix" element={<HashcatCrash />} />
+        <Route path="/writeup/crack-the-hash" element={<HashcatCrash />} />
         
         {/* Exemplo de futuro write-up */}
         {/* <Route path="/writeup/sql-injection" element={<SqlInjectionPage />} /> */}
