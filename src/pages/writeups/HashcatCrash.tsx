@@ -201,8 +201,7 @@ Hash: e5d8870e5bdd26602cab8dbe07a942c8669e56d6
         on your own.
       </p>
       <p>
-        Remember to always use a good wordlist and consider using rules to
-        enhance your cracking attempts.
+        Don't forget to use rockyou.txt to help you in the cracking process. All hashes can be cracked with it!
       </p>
       <br/>
       <p>
