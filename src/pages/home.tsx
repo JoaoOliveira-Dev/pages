@@ -28,7 +28,7 @@ const Home = () => {
                 </div>
               </div>
               <p className="text-gray-400 text-sm mb-4">
-                Resolving Hashcat crash issues and escalating privileges via password cracking.
+                A write-up on cracking various hash types using Hashcat.
               </p>
               <div className="text-xs text-gray-500 font-mono">
                 19 Dec 2025
