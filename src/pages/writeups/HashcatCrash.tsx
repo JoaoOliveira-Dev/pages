@@ -229,6 +229,15 @@ Hash: e5d8870e5bdd26602cab8dbe07a942c8669e56d6
       </p>
       <br/>
       <p>
+        If you need to find the hash code mode for hashcat, you can check the official
+        documentation{" "}
+        <ExternalLink to="https://hashcat.net/wiki/doku.php?id=hashcat">
+          here
+        </ExternalLink>
+        {" "} in the hash mode session.
+      </p>
+      <br/>
+      <p>
         Good luck and happy cracking!
       </p>
     </WriteUpLayout>
