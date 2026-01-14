@@ -142,12 +142,36 @@ MD4: 900`}
         and a wordlist (e.g., rockyou.txt):
       </p>
       <TerminalBlock
-        command="hashcat -m [hash_type_code] -a 0 hashes.txt /usr/share/wordlists/rockyou.txt"
+        command="hashcat -m 0 -a 0 48bb6e862e54f2a795ffc4e541caed4d /usr/share/wordlists/rockyou.txt"
         output={String.raw`
 48bb6e862e54f2a795ffc4e541caed4d:[FLAG1]
+`}
+      />
+
+      <TerminalBlock
+        command="hashcat -m 100 -a 0 CBFDAC6008F9CAB4083784CBD1874F76618D2A97 /usr/share/wordlists/rockyou.txt"
+        output={String.raw`
 CBFDAC6008F9CAB4083784CBD1874F76618D2A97:[FLAG2]
+`}
+      />
+
+      <TerminalBlock
+        command="hashcat -m 1400 -a 0 1C8BFE8F801D79745C4631D09FFF36C82AA37FC4CCE4FC946683D7B336B63032 /usr/share/wordlists/rockyou.txt"
+        output={String.raw`
 1C8BFE8F801D79745C4631D09FFF36C82AA37FC4CCE4FC946683D7B336B63032:[FLAG3]
+`}
+      />
+
+      <TerminalBlock
+        command="hashcat -m 3200 -a 0 $2y$12$Dwt1BZj6pcyc3Dy1FWZ5ieeUznr71EeNkJkUlypTsgbX1H68wsRom /usr/share/wordlists/rockyou.txt"
+        output={String.raw`
 $2y$12$Dwt1BZj6pcyc3Dy1FWZ5ieeUznr71EeNkJkUlypTsgbX1H68wsRom:[FLAG4]
+`}
+      />
+
+      <TerminalBlock
+        command="hashcat -m 900 -a 0 279412f945939ba78ce0758d3fd83daa /usr/share/wordlists/rockyou.txt"
+        output={String.raw`
 279412f945939ba78ce0758d3fd83daa:[FLAG5]
 `}
       />
