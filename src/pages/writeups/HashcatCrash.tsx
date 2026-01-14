@@ -145,13 +145,70 @@ MD4: 900`}
       <TerminalBlock
         command="hashcat -m [hash_type_code] -a 0 hashes.txt /usr/share/wordlists/rockyou.txt"
         output={String.raw`
-48bb6e862e54f2a795ffc4e541caed4d:easy
-CBFDAC6008F9CAB4083784CBD1874F76618D2A97:password123
-1C8BFE8F801D79745C4631D09FFF36C82AA37FC4CCE4FC946683D7B336B63032:letmein
-$2y$12$Dwt1BZj6pcyc3Dy1FWZ5ieeUznr71EeNkJkUlypTsgbX1H68wsRom:bleh
-279412f945939ba78ce0758d3fd83daa:Eternity22
+48bb6e862e54f2a795ffc4e541caed4d:[FLAG1]
+CBFDAC6008F9CAB4083784CBD1874F76618D2A97:[FLAG2]
+1C8BFE8F801D79745C4631D09FFF36C82AA37FC4CCE4FC946683D7B336B63032:[FLAG3]
+$2y$12$Dwt1BZj6pcyc3Dy1FWZ5ieeUznr71EeNkJkUlypTsgbX1H68wsRom:[FLAG4]
+279412f945939ba78ce0758d3fd83daa:[FLAG5]
 `}
       />
+
+      <Title>3.1 Another way to crack hashes</Title>
+      <p>
+        Another away to crack hashes is by using online tools like {" "}
+        <ExternalLink to="https://crackstation.net/">
+          CrackStation
+        </ExternalLink>
+        {" "}or{" "}
+        <ExternalLink to="https://hashes.com/en/decrypt/hash">
+          Hashes
+        </ExternalLink>
+        . You can simply paste the hash and it will try to crack it using its
+        database.
+      </p>
+
+      <img
+        src="crackhash3.png"
+        alt="Hashes Cracked Online"
+        className="my-6 rounded-lg border border-gray-700"
+      />
+
+      <img
+        src="crackhash4.png"
+        alt="Hashes Identify and Cracked Online"
+        className="my-6 rounded-lg border border-gray-700"
+      />
+
+      <Title>4. Next Level</Title>
+      <p>
+        For the next level, we have more complex hashes to crack. Let's take a
+        look at one of them:
+      </p>
+      <TerminalBlock
+        command="cat complex_hash.txt"
+        output={String.raw`Hash: F09EDCB1FCEFC6DFB23DC3505A882655FF77375ED8AA2D1C13F640FCCC2D0C85
+Hash: 1DFECA0C002AE40B8619ECF94819CC1B
+Hash: $6$aReallyHardSalt$6WKUTqzq.UQQmrm0p/T7MPpMbGNnzXPMAXi4bJMl9be.cfi3/qxIf.hsGpS41BqMhSrHVXgMpdjS6xeKZAs02.
+Hash: e5d8870e5bdd26602cab8dbe07a942c8669e56d6
+`}
+      />
+      <p>
+        We can use the same approach as before, identifying the hash types and
+        using hashcat to crack them.
+      </p><br/>
+
+      <p>
+        For the next level, i will let you explore and try to crack these hashes
+        on your own.
+      </p>
+      <p>
+        Remember to always use a good wordlist and consider using rules to
+        enhance your cracking attempts.
+      </p>
+      <br/>
+      <p>
+        Good luck and happy cracking!
+      </p>
     </WriteUpLayout>
   );
 };
