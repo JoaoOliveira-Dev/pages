@@ -30,6 +30,7 @@ const HashcatCrash = () => {
         various types of hashes using Hashcat. We will cover how to identify
         hash types and use Hashcat to crack them effectively.
       </p>
+      <br/>
       <p>
         You can find the room{" "}
         <ExternalLink to="https://tryhackme.com/room/crackthehash">
