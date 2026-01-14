@@ -25,6 +25,18 @@ const HashcatCrash = () => {
       </Link>
 
       {/* ... Todo o conteúdo do Write-up que fizemos antes ... */}
+      <p>
+        In this write-up, I will guide you through the process of cracking
+        various types of hashes using Hashcat. We will cover how to identify
+        hash types and use Hashcat to crack them effectively.
+      </p>
+      <p>
+        You can find the room{" "}
+        <ExternalLink to="https://tryhackme.com/room/crackthehash">
+          here
+        </ExternalLink>
+        .
+      </p>
       <h2 className="text-2xl font-bold text-white mt-8 mb-4">
         1. The problem
       </h2>
