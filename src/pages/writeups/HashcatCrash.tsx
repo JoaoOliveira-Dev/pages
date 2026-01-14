@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import {
   WriteUpLayout,
   TerminalBlock,
-  LinkButton,
   ExternalLink,
   Title,
 } from "../../components/WriteUpComponents";
