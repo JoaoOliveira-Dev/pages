@@ -1,6 +1,5 @@
-import { Link } from 'react-router-dom';
-import { Badge } from '../components/WriteUpComponents';
-import { Terminal } from 'lucide-react';
+import { Terminal } from "lucide-react";
+import WriteUpLinkCard from "../components/links/WriteUpLinkCard";
 
 const Home = () => {
   return (
@@ -11,33 +10,29 @@ const Home = () => {
             <Terminal className="text-green-500" size={40} />
             CTF Write-ups
           </h1>
-          <p className="text-gray-500">Documentation of invasions and CTF resolutions.</p>
+          <p className="text-gray-500">
+            Documentation of invasions and CTF resolutions.
+          </p>
         </header>
 
         <div className="grid gap-4">
-          {/* --- ITEM 1: Card do Write-up --- */}
-          <Link to="/writeup/crack-the-hash" className="block group">
-            <div className="bg-[#161b22] border border-gray-700 rounded-lg p-6 hover:border-green-500 transition-colors">
-              <div className="flex justify-between items-start mb-2">
-                <h2 className="text-xl font-bold text-white group-hover:text-green-400 transition-colors">
-                  Crack the hash
-                </h2>
-                <div className="flex gap-2">
-                  <Badge type="platform">TryHackMe</Badge>
-                  <Badge type="medium">Easy</Badge>
-                </div>
-              </div>
-              <p className="text-gray-400 text-sm mb-4">
-                A write-up on cracking various hash types using Hashcat.
-              </p>
-              <div className="text-xs text-gray-500 font-mono">
-                19 Dec 2025
-              </div>
-            </div>
-          </Link>
-          
-          {/* Adicione novos cards aqui conforme for escrevendo */}
-          
+          <WriteUpLinkCard
+            to="/writeup/crack-the-hash"
+            title="Crack the hash"
+            platform="TryHackMe"
+            difficulty="easy"
+            description="A write-up on cracking various hash types using Hashcat."
+            date="19 Dec 2025"
+          />
+
+          <WriteUpLinkCard
+            to="/writeup/pickle-rick"
+            title="Pickle Rick"
+            platform="TryHackMe"
+            difficulty="easy"
+            description="A write-up on basic enumeration, tips and exploitation techniques in a CTF challenge."
+            date="19 Dec 2025"
+          />
         </div>
       </div>
     </div>
